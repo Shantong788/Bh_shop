@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收货地址</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Add to homescreen for Safari on iOS -->
+    <!--删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/address.css"/>
+    <!--<link rel="stylesheet" href="../../icon/font_98u2dlezjv/demo.css">
+    <link rel="stylesheet" href="../../icon/font_98u2dlezjv/iconfont.css">-->
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/clear.css">
+  	<link rel="stylesheet" href="../css/wl-address.css">
+  	<script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+  	<script src="../js/wl-address.js"></script>
+</head>
+<style type="text/css">
+	input{
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: #fff;
+	}
+	#county{
+		width: 1.5rem; 
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+</style>
+<body>
+    <div class="content">
+        <header id="header">        
+        	<!--<a class="returns"><span></span></a>-->
+            <!--<span>收货地址</span>-->
+            <div class="save" onclick="addrShow('create')">点击添加收货地址
+				<p>(地址设为默认有效)</p>
+			</div>
+
+        </header>
+        <!--<div class="double"></div>-->
+        <div class="main">
+        	<!--地址列表-->
+        	<!--<div class="cnt select">
+        		<div class="select_info cnt">
+        			<li><img src="http://p8fswj9xi.bkt.clouddn.com/376decef276cd7e069ad9b7c4a14b8c3"/></li>
+        			<div class="sect_left">
+        			<p class="name cnt">
+        				<span>亮晶晶</span><span>15038305491</span><span class="sele">默认</span>
+        			</p>
+        			<p class="addres">河南省 郑州市 管城回族区 二里岗 正商佳仕阁1号楼1001</p>
+        			</div>
+        			<div class="sect_right cnt">
+        				<span>编辑</span>
+        			</div>
+        		</div>
+        	</div>-->
+        	<!--<div class="cnt select">
+        		<div class="select_info cnt">
+        			<li><img src="http://p8fswj9xi.bkt.clouddn.com/376decef276cd7e069ad9b7c4a14b8c3"/></li>
+        			<div class="sect_left">
+        			<p class="name cnt">
+        				<span>亮晶晶</span><span>15038305491</span><span class="sele_b cnt"><img src="http://p8fswj9xi.bkt.clouddn.com/dce03e1a9285579e172242a7eb712b6b"/>设置为默认</span>
+        			</p>
+        			<p class="addres">河南省 郑州市 管城回族区 二里岗 正商佳仕阁1号楼1001</p>
+        			</div>
+        			<div class="sect_right cnt">
+        				<span>编辑</span>
+        			</div>
+        		</div>
+        	</div>-->
+        	<!--<div class="cnt select">
+        		<div class="select_info cnt">
+        			<li><img src="http://p8fswj9xi.bkt.clouddn.com/376decef276cd7e069ad9b7c4a14b8c3"/></li>
+        			<div class="sect_left">
+        			<p class="name cnt">
+        				<span>亮晶晶</span><span>15038305491</span><span class="sele_b cnt"><img src="http://p8fswj9xi.bkt.clouddn.com/dce03e1a9285579e172242a7eb712b6b"/>设置为默认</span>
+        			</p>
+        			<p class="addres">河南省 郑州市 管城回族区 二里岗 正商佳仕阁1号楼1001</p>
+        			</div>
+        			<div class="sect_right cnt">
+        				<span>编辑</span>
+        			</div>
+        		</div>
+        	</div>-->
+        	<!--编辑地址-->
+        	<div id="all">
+				<div class="banner">
+					<div class="build">
+						<div class="build-a">
+							<h2>编辑地址</h2>
+							<div class="setTitle_max">
+								<div class="setTitle tit_1">
+									<p class="I_user"><input type="text" id='accept_name' value=""  placeholder="收货人名称"/></p>
+									<span class="ipn"><input type="text" id='mobile' value=""  placeholder="请输入手机号"/></span>
+								</div>
+							</div>
+							<div class="setTitle_max">
+								<div class="setTitle tit_1 address_info">
+									<p class="three_add">
+										<span id="province_name"><input style="width: .8rem;" hidden type="text3" id='province' disabled value=""  placeholder="省"/></span>
+										<span  id="city_name"><input style="width: 1rem;" hidden type="text4" id='city' disabled  value=""   placeholder="市"/></span> 
+										<span id="county_name"><input disabled type="text5" hidden id='county' value=""  placeholder="县"/></span>
+									</p>
+									<span class="info_go" onclick="addrShow('edit')" ></span>
+								</div>
+							</div>
+							<div class="setTitle_max">
+								<div href="forward_list.html" class="setTitle tit_1">
+									<p class="addrs_wish"><input type="text" id='addr' value=""  placeholder="详细到门牌号"/></p>
+									<li><img src="http://p8fswj9xi.bkt.clouddn.com/175e1422bea295841d51ac6e18472583"/></li>
+								</div>
+							</div>
+							<p class="yes">保存</p>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<!--地址选择-->
+
+			
+        	<!-------------->
+    </div>
+</body>   
+	<script src="../js/jquery-2.1.4.js" type="text/jscript"></script>
+    <script type="text/javascript" src="../js/platform.js" ></script>
+    <script src="../js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="../js/address.js" ></script>
+  	<script src="../../layer-v3.1.1/layer/layer.js"></script>
+    <script src="../../layui/layui.js"></script>
+    
+    
+    <script>
+	    	
+//  	 	$('.sect_right').click(function(){
+//  	 	$('#all').fadeToggle({ "duration": 600,})           
+//			$('#all').on("click",function(){
+//			$('#all').fadeOut({ "duration":600,})	    
+//		   	})
+//  	 	})
+//  	 	
+    	 	layui.use('element', function(){
+		$('.site-demo-active').on('click', function(){
+		    var othis = $(this), type = othis.data('type');
+		    active[type] ? active[type].call(this, othis) : '';
+		});
+	 });
+    </script>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!-- Add to homescreen for Safari on iOS -->
+		<!--删除默认的苹果工具栏和菜单栏-->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/details.css" />
+		<link rel="stylesheet" href="../../icon/font_2g7ca0jpu4y/demo.css">
+		<link rel="stylesheet" href="../../icon/font_2g7ca0jpu4y/iconfont.css">
+		<!--<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />-->
+		<link rel="stylesheet" href="../../swiper-4.4.1/dist/css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <script type="text/javascript" src="../../../js/aui-sharebox.js"></script>
+	</head>
+	<style type="text/css">
+		.datails img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		
+		.swiper-pagination-bullet-active {
+			background: #f12020;
+			!importent
+		}
+		p{
+			font-size: .15rem;
+		}		
+	</style>
+
+	<body>
+		<div class="content">
+			<!--<header id="header">        
+        	<a class="returns"><span></span></a>
+            <span>商品详情</span>
+        </header>     -->
+			<!--<div class="double"></div>-->
+			<div class="main">
+				<div class="swiper-container">
+					<div class="swiper-wrapper" id="swiper-item-box">
+						<!--<div class="swiper-slide">Slide 1</div>
+						<div class="swiper-slide">Slide 1</div>
+						<div class="swiper-slide">Slide 1</div>-->
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+				<div class="Price">
+					<p class="pay_for">￥<span id="pay_for_sp">56.00</span></p>
+					<p class="pay_in">￥<span id="pay_in_sp">120.00</span></p>
+					<li class="collect">
+						<i class="icon iconfont" id="iii">&#xe602;</i>
+					</li>
+					<li class="collect collect_enjio">
+						<img src="../img/分享.png" / id="qqq" tapmode onclick="openSharebox();">
+					</li>
+				</div>
+				<div class="cnt" style="width: 100%;border-bottom: solid #F2F2F2 10px;padding-bottom: .2rem;">
+					<p style="width: 95%;" id="tit_name">三元 冰岛式酸奶原味200g*12/24盒整箱批发【新日期好品质】</p>
+				</div>
+				<div class="three">
+					<span class="cnt"><img src="http://p8fswj9xi.bkt.clouddn.com/07f73cb3f5f0299c01059cdace593b1c"/>全场包邮</span>
+					<span class="cnt"><img src="http://p8fswj9xi.bkt.clouddn.com/07f73cb3f5f0299c01059cdace593b1c"/>48小时发货</span>
+					<span class="cnt"><img src="http://p8fswj9xi.bkt.clouddn.com/07f73cb3f5f0299c01059cdace593b1c"/>假一赔十</span>
+				</div>
+				<!--商品评价-->
+				<div class="valuate cnt" style="width: 100%;flex-direction: column;">
+					<p class="next_into" onclick="next_goto()">商品评价
+						<span style="font-size: .23rem;">(228)</span>
+						<span style="">查看全部></span>
+					</p>
+					<div class="val_list">
+						<div class="val">
+							<li class="head"><img src="http://p8fswj9xi.bkt.clouddn.com/7d65c93f336451951201b5951b3263d9" /></li>
+							<span>亮晶晶呦吼吼</span>
+							<span>2018.07.05</span>
+						</div>
+						<p style="color: #999;">收到货了，亮晶晶呦吼吼亮晶晶呦吼吼亮晶晶呦吼吼亮晶晶呦吼吼亮晶晶呦吼吼亮晶晶呦吼吼满意</p>
+					</div>
+				</div>
+				<!--商品详情-->
+				<p style="width:95%;font-weight: 600;line-height: .7rem;border-bottom: solid #f2f2f2 1px;margin-left:.17rem;">商品详情
+					<span style="font-size: .23rem;">(228)</span>
+				</p>
+				<div class="datails">
+					<li><img src="http://p8fswj9xi.bkt.clouddn.com/8b13bf4d75814e58253bde306d2aaefb" /></li>
+					<li><img src="http://p8fswj9xi.bkt.clouddn.com/5134f85518ad95b6c452892125889cfe" /></li>
+					<li><img src="http://p8fswj9xi.bkt.clouddn.com/f4715768abfe5a635b0db7480eb4218b" /></li>
+					<li><img src="http://p8fswj9xi.bkt.clouddn.com/6531a9f024c60e0272fe92f33bdc7972" /></li>
+					<li><img src="http://p8fswj9xi.bkt.clouddn.com/72fd8d20e12e6913449289d785de9b29" /></li>
+				</div>
+				<!-----精品推荐----->
+				<div class="cnt tuijian">
+					<li class="cnt" style="width:.3rem;"><img style="width: 100%;" src="http://p8fswj9xi.bkt.clouddn.com/386ab215374da1754b88e6857313f5b5" /></li>&nbsp;&nbsp;<span>猜你喜欢</span>
+				</div>
+				<div id="list_info">
+					<!--<div class="list_logo cnt" >-->
+					<!--<div class="logo_info">-->
+					<!--<ul class="logo_top"> <img src="http://p8fswj9xi.bkt.clouddn.com/d01d5da9da6f621623e1aca8a63b5d87"/></ul>-->
+					<!--<div class="lo_bor">-->
+					<!--<p>韩风Chinc绑带修身连衣裙衣裙衣裙</p>-->
+					<!--<li class="logo_btm cnt"><span>￥73.00</span> <span>已付款654件</span></li>-->
+					<!--</div>-->
+					<!--</div>-->
+					<!--</div>-->
+				</div>
+				<!-------------->
+			</div>
+			<ul class="btn_buy" onclick=toPay()>
+				立即购买
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/platform.js"></script>
+	<script src="../js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jquery-2.1.4.js" type="text/jscript"></script>
+	<script type="text/javascript" src="../js/details.js"></script>
+	<script type="text/javascript" src="../../layer-v3.1.1/layer/layer.js"></script>
+	<script src="../../swiper-4.4.1/dist/js/swiper.min.js"></script>
+	<script type="text/javascript" src="../../../js/api.js"></script>
+	<script type="text/javascript" src="../../../assets/js/common.js"></script>
+
+	<script>  
+	var mobile = "";
+    apiready = function() {
+        var user = $api.getStorage('username');
+        if (user != null || user != undefined || typeof(user) != "undefined") {
+            //  		alert(JSON.strZingify(user));
+            // updateInfo(user.id);
+            mobile = user;
+            erw = 'https://api.baihuazhongchuang.com/App/user/get_qrcode.html?mobile=' + user;
+
+            $api.attr($api.byId('code'), 'src', erw);
+        } else {
+            alert('无法获取到用户信息，请在“设置”里点击“退出登录”，然后重新登录再来获取二维码。');
+        }
+    }
+	var sharebox = new auiSharebox();
+    function openSharebox() {
+        sharebox.init({
+            frameBounces: true, //当前页面是否弹动，（主要针对安卓端）
+            buttons: [{
+                image: '../img/share/wx.png',
+                text: '微信',
+                value: 'wx' //可选
+            }, {
+                image: '../img/share/wx-circle.png',
+                text: '朋友圈',
+                value: 'var mobile = "";\n' +
+                '    apiready = function() {\n' +
+                '        var user = $api.getStorage(\'username\');\n' +
+                '        if (user != null || user != undefined || typeof(user) != "undefined") {\n' +
+                '            //  \t\talert(JSON.strZingify(user));\n' +
+                '            // updateInfo(user.id);\n' +
+                '            mobile = user;\n' +
+                '            erw = \'https://api.baihuazhongchuang.com/App/user/get_qrcode.html?mobile=\' + user;\n' +
+                '\n' +
+                '            $api.attr($api.byId(\'code\'), \'src\', erw);\n' +
+                '        } else {\n' +
+                '            alert(\'无法获取到用户信息，请在“设置”里点击“退出登录”，然后重新登录再来获取二维码。\');\n' +
+                '        }\n' +
+                '    }wx-circle'
+            }, {
+                image: '../img/share/qq.png',
+                text: 'QQ好友',
+                value: 'qq'
+            }, {
+                image: '../img/share/qzone.png',
+                text: 'QQ空间',
+                value: 'qq-qzone'
+            }, {
+                image: '../img/share/sina-weibo.png',
+                text: '新浪微博',
+                value: 'weibo'
+            }, {
+                image: '../img/share/message.png',
+                text: '短信',
+                value: 'sms'
+            }],
+            col: 5,
+            cancelTitle: '关闭' //可选,当然也可以采用下面的方式使用图标
+                // cancelTitle:'<i class="aui-iconfont aui-icon-close aui-font-size-16"></i>'//可选
+        }, function(ret) {
+            if (ret) {
+
+                // document.getElementById("button-index").textContent = ret.buttonIndex;
+                // document.getElementById("button-value").textContent = ret.buttonValue;
+                var sharetext = '百花众创——让天下没有难创的业。';
+                var shareurl = 'https://api.baihuazhongchuang.com/App/User/reg_page.html?mobile=' + mobile;
+                var type = ret.buttonValue;
+                if (type == 'wx') {
+                    share_type = "session";
+                    //              	alert('分享到微信');
+                }
+                if (type == 'wx-circle') {
+                    share_type = "timeline";
+                }
+
+                if (type == 'wx' || type == 'wx-circle') {
+                    var wx = api.require('wx');
+                    wx.shareWebpage({
+                        scene: share_type,
+                        title: '百花众创',
+                        description: sharetext,
+                        thumb: 'widget://image/logo_mini.png',
+                        contentUrl: shareurl,
+                    }, function(ret, err) {
+                        if (ret.status) {
+                            alert('分享成功');
+                        } else {
+                            //					        alert(err.msg);
+                        }
+                    });
+                } else if (type == 'qq' || type == 'qq-qzone') {
+                    var qq = api.require('qq');
+                    qq.shareText({
+                        text: sharetext + shareurl
+                    });
+
+                } else if (type == 'weibo') {
+                    var weibo = api.require('weibo');
+                    weibo.shareText({
+                        text: sharetext + shareurl,
+                    }, function(ret, err) {
+                        if (ret.status) {
+                            alert('分享成功');
+                        }
+                    });
+                } else if (type == 'sms') {
+                    api.sms({
+                        text: sharetext + shareurl
+                    }, function(ret, err) {
+                        if (ret && ret.status) {
+                            //已发送
+                        } else {
+                            //发送失败
+                        }
+                    });
+                } else {
+                    $api.toast('提示', '暂未开通', 3);
+                }
+
+
+                return;
+            }
+        })
+    }
+	</script>
+
+</html>

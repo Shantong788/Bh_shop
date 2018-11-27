@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Add to homescreen for Safari on iOS -->
+    <!--删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../../icon/font_2g7ca0jpu4y/demo.css">
+	<link rel="stylesheet" href="../../icon/font_2g7ca0jpu4y/iconfont.css">
+	<link rel="stylesheet" href="../css/index4.css">
+    </style>
+    <style type="text/css">
+    	#name{
+    		position: absolute;
+    		left: 1.8rem;    		
+    	}
+    	.three{
+    		width: 100%;
+    		height: .8rem;
+    	}
+    	.three>span{
+	    display: flex;
+	    flex-direction: column;
+	    text-align: center;
+	    justify-content: space-around;
+	    width: 34%;
+	    font-size:.2rem;
+	    color: #808080;
+    	}
+    </style>
+	</head>
+	<body>
+	    <div class="content">
+	        <header id="header">
+	        	<ul class="head"><img src="../img/head.png"/></ul>
+	            <span id="name"></span>
+	          <li class="save"><img src="http://p8fswj9xi.bkt.clouddn.com/12f928e62953d285a33f99ba2a25ec07"/></li>
+	        </header>
+	        <div class="main"> 	  
+	        	<!------商品收藏历史浏览收益------>
+	        	<div class="cnt" style="width: 100%;">
+	        		<div class="cnt three">
+	        			<span class="collect">
+	        				收藏商品
+	        				<p>(<span id="collect_nb">0</span>)</p>
+	        			</span>
+	        			<span class="his_tory">
+	        				历史浏览
+	        				<p >(<span id="his_nb">0</span>)</p>
+	        			</span>
+	        			<span class="money">
+	        				商城收益
+	        				<p>(￥<span id="money_nb">0</span>)</p>
+	        			</span>
+	        		</div>
+	        	</div>
+	        <div class="cnt dingdan" style="width: 100%;border-top: solid #f2f2f2 1px;height:.6rem;"><p class="cnt" style="justify-content:flex-end;width:95%;font-size: .22rem;color: #808080;"><span>查看全部订单></span></p></div>
+	       <!------订单详情----->
+	       <div class="cnt " style="width: 100%;justify-content: space-around;margin-top: .2rem;padding-bottom: .2rem;">
+	       	<div class="shop sel_shop1">
+	       		<li><img src="http://p8fswj9xi.bkt.clouddn.com/77340d57c2e4de24495418c8634946bd"/></li>
+	       		<span>待付款</span>
+	       	</div>
+	       	<div class="shop sel_shop2">
+	       		<li><img src="http://p8fswj9xi.bkt.clouddn.com/7c11cff975cf8f404873f844f5679fb1"/></li>
+	       		<span>待发货</span>
+	       	</div>
+	       	<div class="shop sel_shop3">
+	       		<li><img src="http://p8fswj9xi.bkt.clouddn.com/e3d8812153ee1e260a045f27edf9fc68"/></li>
+	       		<span>待收货</span>
+	       	</div>
+	       	<div class="shop sel_shop4">
+	       		<li><img src="http://p8fswj9xi.bkt.clouddn.com/aa4380fd106045ff73771db60b43c810"/></li>
+	       		<span>待评价</span>
+	       	</div>
+	       </div>
+	       <!------商品收藏历史浏览------>
+	       	<!--<div class="cnt" style="width: 100%;justify-content: space-around;border-top: solid #f2f2f2 1px;padding: .1rem 0;">
+	       	<div class="shop_info collect">
+	       		<li><img src="http://p8fswj9xi.bkt.clouddn.com/067c8ef9a3bb831e2743b85f5255316a"/></li>
+	       		<span>商品收藏</span>
+	       	</div>
+	       	<div class="shop_info his_tory" style="border-left:solid #f2f2f2 1px;">
+	       		<li><img src="http://p8fswj9xi.bkt.clouddn.com/04f62aa5353bff7889f122af795d842a"/></li>
+	       		<span>历史浏览</span>
+	       	</div>
+	       </div>-->
+	       <!-----精品推荐----->
+	       <div class="cnt tuijian">
+	       	<li class="cnt" style="width:.3rem;"><img style="width: 100%;" src="http://p8fswj9xi.bkt.clouddn.com/386ab215374da1754b88e6857313f5b5"/></li>&nbsp;&nbsp;<span>猜你喜欢</span>
+	       </div>
+       <div id="list_info">
+				<!--<div class="list_logo cnt" >
+					<div class="logo_info">
+						<ul class="logo_top"> <img src="http://p8fswj9xi.bkt.clouddn.com/d01d5da9da6f621623e1aca8a63b5d87"/></ul>
+						<div class="lo_bor">
+						<p>韩风Chinc绑带修身连衣裙衣裙衣裙</p>
+						<li class="logo_btm cnt"><span>￥73.00</span> <span>已付款654件</span></li>	
+						</div>
+					</div>
+				</div>-->
+			</div>
+       <!-------------->
+    		</div>
+    			<footer>
+				<li class="index_1">
+					<i class="icon iconfont cnt">&#xe6d3;</i>
+					<p>首页</p>
+				</li>
+				<li class="index_2">
+					<i class="icon iconfont cnt">&#xe663;</i>
+					<p>推荐</p>
+				</li>
+				<li class="index_3">
+					<i class="icon iconfont cnt">&#xe632;</i>
+					<p>搜索</p>
+				</li>
+				<li class="index_4" style="color:#3BA9FE;">
+					<i class="icon iconfont cnt">&#xe61a;</i>
+					<p>我的</p>
+				</li>
+			</footer>
+    </div>
+    <!--<script type="text/javascript" src="../js/md5.js" ></script>-->
+    <script src="../js/platform.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-2.1.4.js" type="text/jscript"></script>
+    <script src="../js/index4.js" type="text/jscript"></script>
+    <script type="text/javascript">
+		
+    </script>
+</body>
+</html>

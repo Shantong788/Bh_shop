@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收货地址</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Add to homescreen for Safari on iOS -->
+    <!--删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/address.css"/>
+    <!--<link rel="stylesheet" href="../../icon/font_98u2dlezjv/demo.css">
+    <link rel="stylesheet" href="../../icon/font_98u2dlezjv/iconfont.css">-->
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+</head>
+<body>
+    <div class="content">
+        <header id="header">        
+        	<a class="returns"><span></span></a>
+            <span>收货地址</span>
+            <div class="save">添加</div>
+        </header> 
+        <!--<div class="double"></div>-->
+        <div class="main">
+        	<!--地址列表-->
+        	<!--<div class="cnt select">
+        		<div class="select_info cnt">
+        			<li><img src="http://p8fswj9xi.bkt.clouddn.com/376decef276cd7e069ad9b7c4a14b8c3"/></li>
+        			<div class="sect_left">
+        			<p class="name cnt">
+        				<span>亮晶晶</span><span>15038305491</span><span class="sele">默认</span>
+        			</p>
+        			<p class="addres">河南省 郑州市 管城回族区 二里岗 正商佳仕阁1号楼1001</p>
+        			</div>
+        			<div class="sect_right cnt">
+        				<span>编辑</span>
+        			</div>
+        		</div>
+        	</div>-->
+        	<!--<div class="cnt select">
+        		<div class="select_info cnt">
+        			<li><img src="http://p8fswj9xi.bkt.clouddn.com/376decef276cd7e069ad9b7c4a14b8c3"/></li>
+        			<div class="sect_left">
+        			<p class="name cnt">
+        				<span>亮晶晶</span><span>15038305491</span><span class="sele_b cnt"><img src="http://p8fswj9xi.bkt.clouddn.com/dce03e1a9285579e172242a7eb712b6b"/>设置为默认</span>
+        			</p>
+        			<p class="addres">河南省 郑州市 管城回族区 二里岗 正商佳仕阁1号楼1001</p>
+        			</div>
+        			<div class="sect_right cnt">
+        				<span>编辑</span>
+        			</div>
+        		</div>
+        	</div>-->
+        	<!--<div class="cnt select">
+        		<div class="select_info cnt">
+        			<li><img src="http://p8fswj9xi.bkt.clouddn.com/376decef276cd7e069ad9b7c4a14b8c3"/></li>
+        			<div class="sect_left">
+        			<p class="name cnt">
+        				<span>亮晶晶</span><span>15038305491</span><span class="sele_b cnt"><img src="http://p8fswj9xi.bkt.clouddn.com/dce03e1a9285579e172242a7eb712b6b"/>设置为默认</span>
+        			</p>
+        			<p class="addres">河南省 郑州市 管城回族区 二里岗 正商佳仕阁1号楼1001</p>
+        			</div>
+        			<div class="sect_right cnt">
+        				<span>编辑</span>
+        			</div>
+        		</div>
+        	</div>-->
+        	<!--编辑地址-->
+        	<div id="all">
+				<div class="banner">
+					<div class="build">
+						<div class="build-a">
+							<h2>编辑地址</h2>
+							<div class="setTitle_max">
+								<div class="setTitle tit_1">
+									<p class="I_user">提现记录</p>
+									<span class="ipn">150383056584</span>
+								</div>
+							</div>
+							<div class="setTitle_max">
+								<a href="forward_list.html" class="setTitle tit_1">
+									<p><span>提现记录</span> <span>提现记录</span> <span>提现记录</span></p>
+									<span class="info_go"></span>
+								</a>
+							</div>
+							<div class="setTitle_max">
+								<div href="forward_list.html" class="setTitle tit_1">
+									<p>文化路任寨北街23号</p>
+									<li><img src="http://p8fswj9xi.bkt.clouddn.com/175e1422bea295841d51ac6e18472583"/></li>
+								</div>
+							</div>
+							<p class="yes">保存</p>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<!--地址选择-->
+			<div id="select">
+				<div class="select_add">
+					<div class="select_bld">
+						<div class="select-info">
+							<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+							  <ul class="layui-tab-title" style="border: none;">
+							    <li class="layui-this">河南省</li>
+							    <li>郑州市</li>
+							    <li>管城回族区</li>
+							  </ul>
+							  <div class="layui-tab-content">
+							    <div class="layui-tab-item layui-show">
+								    <!--<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>河南</span></p>
+										<span class="info_go"></span>
+									</div>
+								   <div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>北京市</span></p>
+										<span class="info_go"></span>
+									</div>
+									<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>台湾</span></p>
+										<span class="info_go"></span>
+									</div>
+									<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>上海市</span></p>
+										<span class="info_go"></span>
+									</div>
+								    <div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>台湾</span></p>
+										<span class="info_go"></span>
+									</div>
+									<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>上海市</span></p>
+										<span class="info_go"></span>
+									</div>
+							    </div>
+							    <div class="layui-tab-item">
+							    	<div class="setTitle tit_1 Pince" style="width: 102%;">
+									<p><span>河南</span></p>
+									<span class="info_go"></span>
+								</div>-->
+								   <!--<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>北京市</span></p>
+										<span class="info_go"></span>
+									</div>
+									<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>台湾</span></p>
+										<span class="info_go"></span>
+									</div>
+									<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>上海市</span></p>
+										<span class="info_go"></span>
+									</div>
+								    <div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>台湾</span></p>
+										<span class="info_go"></span>
+									</div>
+									<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>上海市</span></p>
+										<span class="info_go"></span>
+									</div>-->
+							    </div>
+							    <div class="layui-tab-item">
+							    	<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<!--<p><span>河南</span></p>
+										<span class="info_go"></span>
+									</div>
+								   <div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>北京市</span></p>
+										<span class="info_go"></span>
+									</div>
+									<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>台湾</span></p>
+										<span class="info_go"></span>
+									</div>
+									<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>上海市</span></p>
+										<span class="info_go"></span>
+									</div>
+								    <div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>台湾</span></p>
+										<span class="info_go"></span>
+									</div>
+									<div class="setTitle tit_1 Pince" style="width: 102%;">
+										<p><span>上海市</span></p>
+										<span class="info_go"></span>-->
+									</div>
+							    </div>
+							  </div>
+							</div>  
+						</div>
+					</div>
+				</div>	
+			</div>
+        	<!-------------->
+    </div>
+</body> 
+    <script type="text/javascript" src="../js/platform.js" ></script>
+    <script src="../js/adaptation.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-2.1.4.js" type="text/jscript"></script>
+    <script type="text/javascript" src="../js/address.js" ></script>
+    <script src="../../layui/layui.js"></script>
+    <script>
+    	 	$('.sect_right').click(function(){
+    	 		$('#all').fadeToggle({ "duration": 600,})           
+			$('#all').on("click",function(){
+			$('#all').fadeOut({ "duration":600,})	    
+		   	})
+    	 	})
+//  	 	添加地址
+    	 	$('.save').click(function(){
+    	 		$('#select').fadeToggle({ "duration": 600,})           
+			$('#select').on("click",function(){
+			$('#select').fadeOut({ "duration":600,})	    
+		   	})
+			$('.select_add').on("click",function(){	
+			$('.select_add').css({ "display":"flex"})
+				event.stopPropagation();
+			})
+    	 	})
+    	 	layui.use('element', function(){
+		$('.site-demo-active').on('click', function(){
+		    var othis = $(this), type = othis.data('type');
+		    active[type] ? active[type].call(this, othis) : '';
+		});
+	 });
+    </script>
+</html>

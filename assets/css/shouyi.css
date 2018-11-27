@@ -1,0 +1,133 @@
+	html,body{
+    		width: 100%;
+    		height: 100%;
+    	}
+    .cnt{
+    	display: flex;
+    	justify-content:center;
+    	align-items: center;
+    }		
+    	.content{
+    		width: 100%;
+    		height: 100%;
+    		display: flex;
+    		flex-direction: column;
+    		font-family: "微软雅黑";
+    		color: #333333;
+    		font-size: .25rem;
+    		background: #fff;
+    	}
+    	/*头部*/
+    	#header{					
+		width: 100%;
+		height: 0.9rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	    font-size: 0.3rem;
+	    background: #fff;
+	    color: #333;
+	    position: relative;
+	    font-family: "微软雅黑";
+	} 
+    	.returns{
+		position: absolute;
+		width: 0.8rem;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.returns span{
+		display:block;
+		border-left: 0.03rem solid #333;
+		border-bottom: 0.03rem solid #333;
+		width: .22rem; 
+		height: .22rem;
+		transform: rotate(45deg);
+	}
+    	#header .save{
+		top: 45%;
+		margin-top: -0.11rem;
+		display:block;
+	    position: absolute;
+	    right: 0.3rem;			
+		font-size: .25rem;			
+	}
+    	/*主体内容*/
+    	.main{
+    		width: 100%;
+    		flex: 1;
+    		overflow-y: auto;
+    		background: ;
+    	}
+	.order{
+		background: url(../img/Z.jpg);
+		background-size: 100% 100%;
+		text-align: center;
+		flex-direction: column;
+		width: 100%;
+		color: #fff;
+		height: 3rem;
+		font-weight: 200;
+	}
+	.order>span{
+		width: 100%;
+		height: .5rem;
+	}
+	.order>p:nth-child(1){
+		font-size: .3rem;
+	}
+	.order>p:nth-child(2){
+		font-size: .3rem;
+		margin-top: .4rem;
+	}
+	.money{
+		font-size: .45rem;
+	}
+	.all_money{
+		font-size: .3rem;
+	}
+	.image{
+		width: .5rem;
+	}
+	.fore_info{
+		width: 95%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.forgets{
+		position: absolute;
+		right: .5rem;
+	}
+	.fore_info_b{
+		width: 75%;
+		color: #808080;
+		font-weight: 300;
+		font-size: .24rem;
+	}
+	.time{
+		font-size: .2rem;
+	}
+	.aaa{
+		position: absolute;
+		right: .3rem;
+		top: .2rem;
+		color: #333;
+		font-weight: 500;
+	}
+	.big{
+		width: 100%;border-bottom: solid#F2F2F2 1px;height: .8rem;position:relative;
+	}
+	.none{
+		display: none;
+		text-align: center;
+		margin-top: 1rem;
+	}
+
+
+
+

@@ -1,0 +1,157 @@
+html,body{
+    		width: 100%;
+    		height: 100%;
+    	}
+    .cnt{
+    	display: flex;
+    	justify-content:center;
+    	align-items: center;
+    }		
+    	.content{
+    		width: 100%;
+    		height: 100%;
+    		display: flex;
+    		flex-direction: column;
+    		font-family: "微软雅黑";
+    		color: #333333;
+    		font-size: .25rem;
+    		background: #fff;
+    	}
+    	/*头部*/
+    	#header{					
+		width: 100%;
+		height: 0.9rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	    font-size: 0.3rem;
+	    background: #fff;
+	    color: #333;
+	    position: relative;
+	    font-family: "微软雅黑";
+	} 
+    	.returns{
+		position: absolute;
+		width: 0.8rem;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.returns span{
+		display:block;
+		border-left: 0.03rem solid #FFFFFF;
+		border-bottom: 0.03rem solid #FFFFFF;
+		width: .22rem; 
+		height: .22rem;
+		transform: rotate(45deg);
+	}
+    	#header .save{
+		top: 45%;
+		margin-top: -0.11rem;
+		display:block;
+	    position: absolute;
+	    right: 0.3rem;			
+		font-size: .25rem;			
+	}
+    	/*主体内容*/
+    	.main{
+    		width: 100%;
+    		flex: 1;
+    		overflow-y: auto;
+    		background: ;
+    	}
+    	/*尾部*/
+    	footer{
+    		width: 100%;
+    		height: 1rem;
+    		display: flex;
+    		background: #ffffff;
+    	}
+    	footer li{
+    		width:30%;
+    		heighst: 100%;
+    		display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    		align-items: center;
+    		color:#333333;
+    		font: 0.2rem "微软雅黑";
+    	}
+    	.writ{
+    		width: 90%;
+    		height: .5rem;
+    		border-radius: .1rem;
+    		background: #eee;
+    		display: flex;
+    		align-items: center;
+    		overflow: hidden;
+    	}
+    	.writ>img{
+    		width: .3rem;
+			position: absolute;
+			left: 2rem;
+    	}
+    	#ipt{
+    		width: 100%;
+    		height: 100%;
+    		background: #eee;
+    		border: none;
+    		text-align: center;
+    		margin-left: .4rem;
+			font-size: .2rem;
+    	}
+		input::-webkit-input-placeholder{
+			color: #999;
+		}
+    	.anny{
+			 width: 100%;
+			 display: flex;
+			 justify-content: space-between;
+			 margin-top: .5rem;
+    	}
+    	.lft{
+	    	width: 22%;
+			text-align: center;
+			background: #f2f2f2;
+			height: calc(100vh - 3rem);
+    		overflow: scroll;
+			font-size: .28rem;
+			font-weight: bold;
+    	} 
+    	.lft>p{
+    		line-height: 1rem;
+    	}
+    	.rgt{
+    		width: 85%;
+    		height: calc(100vh - 3rem);
+    		overflow: scroll;
+    	} 
+    .shop{
+	    	width: 33%;
+			height: 2rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			border: solid #f2f2f2 .1px;
+    	}
+    	.shop>li{
+    		width: 1.4rem;
+    		height: 1.4rem;
+    		position: absolute;
+    		top: 0;
+    	}
+    	.shop>li>img{
+    		width: 100%;
+    		height: 100%;
+    	}
+    	.shop>span{
+			text-align: center;
+			line-height: .3rem;
+			position: absolute;
+			bottom: 14px
+    	} 

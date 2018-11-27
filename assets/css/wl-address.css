@@ -1,0 +1,123 @@
+.wl-mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background: rgba(114, 114, 114, 0.6);
+}
+
+.wl-address-box {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  z-index: 101;
+  width: 100%;
+  height: 60%;
+  background-color: #fff;
+}
+
+.wl-address-title {
+  height: 36px;
+  line-height: 36px;
+  border-top: 1px solid #e6e6e6;
+  /* #e6a23c */
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.wl-address-item {
+  float: left;
+  padding: 0 10px;
+}
+
+.active-item-title {
+  color: #e6a23c;
+  border-bottom: 1px solid #e6a23c;
+}
+
+.wl-address-content {
+  position: relative;
+  height: calc(100% - 38px);
+}
+
+.wl-address-list {
+  padding: 10px;
+  height: 100%;
+  line-height: 28px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.act-address {
+  color: #e6a23c;
+}
+
+.wl-address-loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -100px;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  background: transparent;
+}
+
+.wl-address-loading > div {
+  margin: 0 4px;
+  background-color: #e6a23c;
+  opacity: 0.4;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.wl-address-loading .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.wl-address-loading .rect3 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+.wl-address-loading .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.wl-address-loading .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+  0%,
+  40%,
+  100% {
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@keyframes stretchdelay {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+}

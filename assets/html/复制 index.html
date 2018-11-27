@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <script type="text/javascript" src="../../../js/aui-sharebox.js"></script>
+</head>
+<body>
+<!--<header class="aui-bar aui-bar-nav" id="aui-header">-->
+    <!--<a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">-->
+        <!--<span class="aui-iconfont aui-icon-left"></span>-->
+    <!--</a>-->
+    <!--<div class="aui-title" id="aui-title"></div>-->
+    <!--<a class="aui-pull-right aui-btn" tapmode onclick="openSharebox();">-->
+        <!--<span class="aui-iconfont aui-icon-share"></span>-->
+    <!--</a>-->
+<!--</header>-->
+</body>
+<script type="text/javascript" src="../../../js/api.js"></script>
+<script type="text/javascript" src="../../../assets/js/common.js"></script>
+<script type="text/javascript">
+    var url11 = '';
+    var title11 = '';
+    var lecturer = '';
+
+    apiready = function() {
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        var news_id = api.pageParam.news_id;
+        var news_title = api.pageParam.news_title;
+        $api.text($api.byId('aui-title'), news_title);
+
+        api.clearCache(); //每次打开H5清理缓存防止缓存网页。
+        // var user = $api.getStorage('user').level;
+        // var my_id = api.pageParam.my_id;
+        // lecturer = api.pageParam.name;
+        title11 = news_title;
+        api.showProgress({
+            title: '加载中...',
+            modal: false
+        });
+        var toUrl = 'https://api.baihuazhongchuang.com/news/wine_detail.html?news_id=247news_title=&share=1&from=singlemessage&isappinstalled=0';
+        var screenHeight = api.screenHeight;
+        api.openFrame({
+            name: 'zero_frm',
+            url: toUrl,
+            bounces: false,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: headerPos.w,
+                h: api.winHeight - headerPos.h
+            }
+        });
+        $api.addEvt($api.byId('back'), 'touchend', function() {
+
+            if (isWeb()) {
+                api.closeWin();
+            } else {
+                api.historyBack({
+                    frameName: 'zero_frm'
+                }, function(ret, err) {
+                    if (!ret.status) {
+                        api.closeWin();
+                    }
+                });
+            }
+
+        });
+
+        api.addEventListener({
+            name: 'keyback'
+        }, function(ret, err) {
+            if (isWeb()) {
+
+            } else {
+                api.historyBack({
+                    frameName: 'zero_frm'
+                }, function(ret, err) {
+                    if (!ret.status) {
+                        api.closeWin();
+                    }
+                });
+            }
+        });
+
+        // 获取当前页面URL
+        api.setFrameClient({
+            frameName: 'zero_frm'
+        }, function(ret) {
+            //  console.log(ret)
+            if (0 == ret.state) { //frame开始加载
+                var url = ret.url;
+                url11 = url
+                // console.log('frame loading start: ' + url11);
+            } else if (1 == ret.state) { //frame加载进度发生变化
+                var p = ret.progress;
+                // console.log('frame loading: ' + p);
+            } else if (2 == ret.state) { //frame结束加载
+                api.hideProgress();
+                var url = ret.url;
+                // console.log('frame loading finish: ' + url);
+            } else if (3 == ret.state) { //frame标题发生变化
+                // title11 = ret.title;
+                // console.log('frame loading ok: ' + ret.title);
+            }
+        });
+    };
+
+
+
+    var sharebox = new auiSharebox();
+
+    function openSharebox() {
+        var dialogBox = api.require('dialogBox');
+        dialogBox.share({
+            rect: {
+                w: 300,
+                h: 250
+            },
+            items: [{
+                text: '微信',
+                icon: 'widget://image/share/wx.png'
+            }, {
+                text: '朋友圈',
+                icon: 'widget://image/share/wx-circle.png'
+            }, {
+                text: 'QQ',
+                icon: 'widget://image/share/qq.png'
+            }, {
+                text: 'QQ空间',
+                icon: 'widget://image/share/qzone.png'
+            }, {
+                text: '新浪微博',
+                icon: 'widget://image/share/sina-weibo.png'
+            }, {
+                text: '短信',
+                icon: 'widget://image/share/message.png'
+            }],
+            styles:{
+                bg: '#FFF',
+                column: 3,
+                horizontalSpace: 15,
+                verticalSpace: 30,
+                itemText: {
+                    color: '#000',
+                    size: 15,
+                    marginT: 10
+                },
+                itemIcon: {
+                    size: 50
+                }
+            },
+            tapClose: true
+        }, function(ret) {
+            // alert(JSON.stringify(ret));
+            // alert(url11)
+            var sharetext = title11;
+            var shareurl = url11 + "&share=1";
+            var type = ret.index;
+            // alert(type)
+            if (type == 0) {
+                share_type = "session";
+                // alert('分享到微信');
+            }
+            if (type == 1) {
+                share_type = "timeline";
+            }
+
+            if (type == 0 || type == 1) {
+                var wx = api.require('wx');
+                wx.shareWebpage({
+                    scene: share_type,
+                    title: title11,
+                    // description: lecturer,
+                    thumb: 'widget://image/bh_logo.png',
+                    contentUrl: shareurl,
+                }, function(ret, err) {
+                    if (ret.status) {
+                        alert('分享成功');
+                    } else {
+                        //             alert(ret.msg);
+                    }
+                });
+            } else if (type == 2 || type == 3) {
+                var qq = api.require('qq');
+                qq.shareText({
+                    text: sharetext + shareurl
+                });
+
+            } else if (type == 4) {
+                var weibo = api.require('weibo');
+                weibo.shareText({
+                    text: sharetext + shareurl,
+                }, function(ret, err) {
+                    if (ret.status) {
+                        alert('分享成功');
+                    }
+                });
+            } else if (type == 5) {
+                api.sms({
+                    text: sharetext + shareurl
+                }, function(ret, err) {
+                    if (ret && ret.status) {
+                        //已发送
+                    } else {
+                        //发送失败
+                    }
+                });
+            } else {
+                $api.toast('提示', '暂未开通', 3);
+            }
+            return;
+        });
+    }
+</script>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>推广客户</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <script type="text/javascript" src="../../../js/aui-sharebox.js"></script>
+    <style type="text/css">
+        .share-box{
+            width: 100%;
+            min-height: 100vh;
+            background: url(../../image/shareQR/share-bg.png) no-repeat; background-size: 100% 100%;
+        }
+
+        .btns-box{padding: 3.5rem 0.75rem 6px;overflow: hidden;}
+        @media screen and (max-width:374px) {
+            .btns-box{padding: 1rem 0.75rem 6px;}
+        }
+        .btns-box li{width: 45%;height: 2.4rem; background: #fff;border-radius: 25px;box-shadow: -3px 3px 3px rgba(0,0,0,0.3);}
+        .btns-box .btn1{float: left;}
+        .btns-box .btn2{float: right;}
+        .btns-box li img{margin: 0 auto;margin-top: calc(1.2rem - 11px);width: 96px;}
+        .share-logo{width: 18%;}
+
+        .share_img {
+            text-align: center;
+            padding-top: 15px;
+            margin: 0 auto
+        }
+
+        .logo_img img {
+            margin-top: 3.2rem;
+            max-width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--<div class="share-box">-->
+        <!--img src="../../image/shareQR/share-logo.png" class="share_img share-logo" alt="">-->
+
+        <!-- <img src="../image/shareQR/share-font1.png" class="share_img" alt=""> -->
+
+        <!--<div class="logo_img">
+            <img src="../../image/bh_logo.png" id="code" class="share_img" alt="">
+        </div>-->
+        <!--<img src="../../image/shareQR/share-font2.png" class="share_img" id="code" alt="扫描二维码下载百花众创APP" style="width:62%;">-->
+        <!--<ul class="btns-box">-->
+            <li tapmode onclick="openSharebox();"><img src="../../image/shareQR/share-btn2.png" alt="" style="width: 3rem;height: 3rem;background: #0000FF;"></li>
+        <!--</ul>
+    </div>-->
+</body>
+<script type="text/javascript" src="../../../js/api.js"></script>
+<script type="text/javascript" src="../../../assets/js/common.js"></script>
+<script type="text/javascript" src="../../script/jquery-2.1.4.js"></script>
+<!--<script src="../../script/qrcode.min.js"></script>-->
+<script type="text/javascript">
+    function save_img() {
+        var user = $api.getStorage('username');
+        if (user != null || user != undefined || typeof(user) != "undefined") {
+
+            erw = 'https://api.baihuazhongchuang.com/App/user/get_qrcode.html?mobile=' + user;
+
+            var savepath = "baihuaqr.jpg";
+            api.download({
+                url: erw,
+                savePath: 'fs://' + savepath,
+                report: true,
+                cache: false,
+                allowResume: false
+            }, function(ret, err) {
+                if (ret.state == 1) {
+                    //下载成功
+                    api.saveMediaToAlbum({
+                        path: 'fs://' + savepath
+                    }, function(ret, err) {
+                        if (ret && ret.status) {
+                            alert('保存成功');
+                        } else {
+                            alert('保存失败');
+                        }
+                    });
+                } else {
+
+                }
+            });
+        } else {
+            alert('无法获取到用户信息，请在“设置”里点击“退出登录”，然后重新登录再来获取二维码。');
+        }
+
+
+    }
+    var mobile = "";
+    apiready = function() {
+        var user = $api.getStorage('username');
+        if (user != null || user != undefined || typeof(user) != "undefined") {
+            //  		alert(JSON.strZingify(user));
+            // updateInfo(user.id);
+            mobile = user;
+            erw = 'https://api.baihuazhongchuang.com/App/user/get_qrcode.html?mobile=' + user;
+
+            $api.attr($api.byId('code'), 'src', erw);
+        } else {
+            alert('无法获取到用户信息，请在“设置”里点击“退出登录”，然后重新登录再来获取二维码。');
+        }
+    }
+
+
+    var sharebox = new auiSharebox();
+
+    function openSharebox() {
+        sharebox.init({
+            frameBounces: true, //当前页面是否弹动，（主要针对安卓端）
+            buttons: [{
+                image: '../../image/share/wx.png',
+                text: '微信',
+                value: 'wx' //可选
+            }, {
+                image: '../../image/share/wx-circle.png',
+                text: '朋友圈',
+                value: 'wx-circle'
+            }, {
+                image: '../../image/share/qq.png',
+                text: 'QQ好友',
+                value: 'qq'
+            }, {
+                image: '../../image/share/qzone.png',
+                text: 'QQ空间',
+                value: 'qq-qzone'
+            }, {
+                image: '../../image/share/sina-weibo.png',
+                text: '新浪微博',
+                value: 'weibo'
+            }, {
+                image: '../../image/share/message.png',
+                text: '短信',
+                value: 'sms'
+            }],
+            col: 5,
+            cancelTitle: '关闭' //可选,当然也可以采用下面的方式使用图标
+                // cancelTitle:'<i class="aui-iconfont aui-icon-close aui-font-size-16"></i>'//可选
+        }, function(ret) {
+            if (ret) {
+
+                // document.getElementById("button-index").textContent = ret.buttonIndex;
+                // document.getElementById("button-value").textContent = ret.buttonValue;
+                var sharetext = '百花众创——让天下没有难创的业。';
+                var shareurl = 'https://api.baihuazhongchuang.com/App/User/reg_page.html?mobile=' + mobile;
+                var type = ret.buttonValue;
+                if (type == 'wx') {
+                    share_type = "session";
+                    //              	alert('分享到微信');
+                }
+                if (type == 'wx-circle') {
+                    share_type = "timeline";
+                }
+
+                if (type == 'wx' || type == 'wx-circle') {
+                    var wx = api.require('wx');
+                    wx.shareWebpage({
+                        scene: share_type,
+                        title: '百花众创',
+                        description: sharetext,
+                        thumb: 'widget://image/logo_mini.png',
+                        contentUrl: shareurl,
+                    }, function(ret, err) {
+                        if (ret.status) {
+                            alert('分享成功');
+                        } else {
+                            //					        alert(err.msg);
+                        }
+                    });
+                } else if (type == 'qq' || type == 'qq-qzone') {
+                    var qq = api.require('qq');
+                    qq.shareText({
+                        text: sharetext + shareurl
+                    });
+
+                } else if (type == 'weibo') {
+                    var weibo = api.require('weibo');
+                    weibo.shareText({
+                        text: sharetext + shareurl,
+                    }, function(ret, err) {
+                        if (ret.status) {
+                            alert('分享成功');
+                        }
+                    });
+                } else if (type == 'sms') {
+                    api.sms({
+                        text: sharetext + shareurl
+                    }, function(ret, err) {
+                        if (ret && ret.status) {
+                            //已发送
+                        } else {
+                            //发送失败
+                        }
+                    });
+                } else {
+                    $api.toast('提示', '暂未开通', 3);
+                }
+
+
+                return;
+            }
+        })
+    }
+</script>
+
+</html>
